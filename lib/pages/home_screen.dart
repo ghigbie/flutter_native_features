@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget{
         child: Container(
           padding: EdgeInsets.only(top: 80, left: 15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Stuff'),
               Text('Moo'),
