@@ -5,16 +5,6 @@ import '../constants.dart';
 
 
 
-class HomeScreenGeneral extends StatefulWidget{
-  HomeScreenGeneral({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  HomeScreenGeneral createState() => HomeScreenGeneralState();
-}
-
-
 class HomeScreen extends State<HomeScreenGeneral>{
   HomeScreen(): super();
 

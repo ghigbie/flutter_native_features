@@ -27,17 +27,25 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
 
+class _MyHomePageState extends State<MyHomePage> {
   String _batteryLevel = 'Unknown';
+  static const platform = const MethodChannel(CHANNEL_BATTERY);
 
   Future<void> _getBatteryLevel() async{
     String batteryLevel;
+    try{
+      final int result = await platform.invokeMethod(CHANNEL_METHOD_BATTERY_GET);
+      batteryLevel = '${result}% Battery Level';
+    }on PlatformException catch(e){
+      batteryLevel = 'Failed to get batter level: ${e}';
+    }catch(e){
+      batteryLevel = 'Error: ${e.message}';
+    }
 
-    static const platform = const MethodChannel(CHANNEL_BATTERY);
-    final int result = await platform.invokeMethod(CHANEL_METHOD_BATTERY_GET);
-  }
-  String batteryLevel;
+    setState(){
+      _batteryLevel = batteryLevel;
+    }
   }
 
   @override
@@ -64,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(bottom: 20),
-              child: Text('Battery level: ${_batterylevel}', style: TextStyle(fontSize: 25))
+              child: Text(_batteryLevel, style: TextStyle(fontSize: 25))
             ),
             RaisedButton(
               child: Text('Get Battery Level'),
