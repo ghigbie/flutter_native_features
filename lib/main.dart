@@ -8,9 +8,7 @@ class NativeFeaturesApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Native Features',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey[300],
-      ),
+      theme: ThemeData.dark(),
       home: HomeScreen()
     );
   }
