@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'constants.dart';
+import '../constants.dart';
 
-class HomeScreen extends StatelessWidget{
+
+
+class HomeScreenGeneral extends StatefulWidget{
+  HomeScreenGeneral({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  HomeScreenGeneral createState() => HomeScreenGeneralState();
+}
+
+
+class HomeScreen extends State<HomeScreenGeneral>{
   HomeScreen(): super();
 
   String _batteryLevel = 'Unknown';
