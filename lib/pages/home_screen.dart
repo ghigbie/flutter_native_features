@@ -7,7 +7,9 @@ class HomeScreen extends StatelessWidget{
 
   String _batteryLevel = 'Unknown';
 
-  Future<void> _getBatteryLevel
+  Future<void> _getBatteryLevel(){
+    
+  }
 
   @override
   Widget build(BuildContext context) {
