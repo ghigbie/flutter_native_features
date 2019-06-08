@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'constants.dart';
 
 class HomeScreen extends StatelessWidget{
   HomeScreen(): super();
@@ -8,7 +9,10 @@ class HomeScreen extends StatelessWidget{
   String _batteryLevel = 'Unknown';
 
   Future<void> _getBatteryLevel(){
+    String batteryLevel;
 
+    static const platform = const MethodChannel('${CHANNEL_BASE}/battery');
+    final int result = await platform.invokeMEthod('getBatteryLevel');
   }
 
   @override
