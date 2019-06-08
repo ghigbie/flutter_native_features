@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _getBatteryLevel() async{
     String batteryLevel;
-    batteryLevel = "Function called";
+
     try{
       final int result = await platform.invokeMethod(CHANNEL_METHOD_BATTERY_GET);
       batteryLevel = '${result}% Battery Level';
