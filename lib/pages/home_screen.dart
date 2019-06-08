@@ -25,16 +25,16 @@ class HomeScreen extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 10),
+              child: Text('58% battery level', style: TextStyle(fontSize: 25))
+            ),
             RaisedButton(
               child: Text('Get Battery Level'),
               onPressed: (){
 
               },
             ),
-            Container(
-              padding: EdgeInsets.only(top: 10),
-              child: Text('58% battery level')
-            )
           ]
       )
     ),
