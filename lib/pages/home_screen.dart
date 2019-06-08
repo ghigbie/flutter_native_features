@@ -20,11 +20,24 @@ class HomeScreen extends StatelessWidget{
       ),
       appBar: AppBar(
         title: Text("Native Features")
-      ), body: Center(
-          child: Container(
-            child: Text('Tap here to get the battery'),
-        )
+      ), 
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Get Battery Level'),
+              onPressed: (){
+
+              },
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 10),
+              child: Text('58% battery level')
+            )
+          ]
       )
+    ),
     );
   }
 }
