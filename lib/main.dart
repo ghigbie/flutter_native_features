@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/home_screen.dart';
 
 void main() => runApp(NativeFeaturesApp());
 
@@ -10,7 +11,7 @@ class NativeFeaturesApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.blueGrey[300],
       ),
-      home: HomeScreen(title: 'Native Features Home Screen')
+      home: HomeScreen()
     );
   }
 }
