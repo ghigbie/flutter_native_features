@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget{
   HomeScreen(): super();
+
+  String _batteryLevel = 'Unknown';
+
+  Future<void> _getBatteryLevel
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +32,8 @@ class HomeScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 10),
-              child: Text('58% battery level', style: TextStyle(fontSize: 25))
+              padding: EdgeInsets.only(bottom: 20),
+              child: Text('${_batteryLevel} battery level', style: TextStyle(fontSize: 25))
             ),
             RaisedButton(
               child: Text('Get Battery Level'),
