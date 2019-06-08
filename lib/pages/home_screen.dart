@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget{
   String _batteryLevel = 'Unknown';
 
   Future<void> _getBatteryLevel(){
-    
+
   }
 
   @override
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget{
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(bottom: 20),
-              child: Text('${_batteryLevel} battery level', style: TextStyle(fontSize: 25))
+              child: Text('Battery level: ${_batterylevel}', style: TextStyle(fontSize: 25))
             ),
             RaisedButton(
               child: Text('Get Battery Level'),
