@@ -28,11 +28,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  _MyHomePageState(): super();
 
   String _batteryLevel = 'Unknown';
 
-  Future<void> _getBatteryLevel() async(){
+  Future<void> _getBatteryLevel() async{
     String batteryLevel;
 
     static const platform = const MethodChannel(CHANNEL_BATTERY);
