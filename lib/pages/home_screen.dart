@@ -11,8 +11,8 @@ class HomeScreen extends StatelessWidget{
   Future<void> _getBatteryLevel(){
     String batteryLevel;
 
-    static const platform = const MethodChannel('${CHANNEL_BASE}/battery');
-    final int result = await platform.invokeMEthod('getBatteryLevel');
+    static const platform = const MethodChannel(CHANNEL_BATTERY);
+    final int result = await platform.invokeMethod(CHANNEL_METHOD_BATTERY_GET);
   }
 
   @override
