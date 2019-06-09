@@ -29,7 +29,14 @@ public class MainActivity extends FlutterActivity {
             new MethodCallHandler() {
               @Override
               public void onMethodCall(MethodCall methodCall, Result result) {
-                //Handel
+                if (methodCall.method.equals("getBatteryLevel")){
+                  int batteryLevel = getBatteryLevel();
+                  if (batteryLevel != -1){
+                    result.error("UNAVAILABLE", "Battery level not available.", null)
+                  }
+                }else{
+                  result.notImplemented();
+                }
               }
             }
     );
