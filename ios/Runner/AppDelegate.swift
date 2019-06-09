@@ -24,6 +24,7 @@ import Flutter
   }
 
     private func receiveBatteryLevel(result: FlutterResult){
+       // result(54); --- use this for tesing
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
         if device.batteryState == UIDeviceBatteryState.unknown{
