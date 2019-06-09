@@ -31,8 +31,10 @@ public class MainActivity extends FlutterActivity {
               public void onMethodCall(MethodCall methodCall, Result result) {
                 if (methodCall.method.equals("getBatteryLevel")){
                   int batteryLevel = getBatteryLevel();
-                  if (batteryLevel != -1){
-                    result.error("UNAVAILABLE", "Battery level not available.", null)
+                  if (batteryLevel != -1) {
+                    result.success(batteryLevel);
+                  }else{
+                    result.error("UNAVAILABLE", "Battery level not available.", null);
                   }
                 }else{
                   result.notImplemented();
